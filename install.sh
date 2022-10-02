@@ -220,7 +220,7 @@ EOF
         systemctl enable trojan.service
         cd /root
         ~/.acme.sh/acme.sh  --register-account  -m dykro@dykro.com --server zerossl
-        ~/.acme.sh/acme.sh  --server zerossl  --issue  -d  $your_domain  --dns dns_cf \
+        ~/.acme.sh/acme.sh  --install-cert  -d  $your_domain  --dns dns_cf \
             --key-file   /usr/src/trojan-cert/$your_domain/private.key \
             --fullchain-file  /usr/src/trojan-cert/$your_domain/fullchain.cer \
             --reloadcmd  "systemctl restart trojan"	
