@@ -79,7 +79,7 @@ EOF
             red "不存在/usr/src/trojan-cert/$your_domain目录"
             exit 1
         fi
-        curl https://get.acme.sh | sh
+        curl https://get.acme.sh | sh -s email=dykro@dykro.com | sh
         ~/.acme.sh/acme.sh  --issue  -d $your_domain  --nginx
         if test -s /root/.acme.sh/$your_domain/fullchain.cer; then
             cert_success="1"
