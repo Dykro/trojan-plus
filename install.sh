@@ -430,7 +430,7 @@ function update_trojan(){
     /usr/src/trojan/trojan -v 2>trojan.tmp
     curr_version=`cat trojan.tmp | grep "trojan" | awk '{print $4}'`
     wget https://api.github.com/repos/atrandys/trojan-plus/releases/latest
-    latest_version=`grep tag_name latest| awk -F '[:,"v]' '{print $6}'`
+    latest_version=`grep tag_name| awk -F '[:,"v]' '{print $6}'`
     rm -f latest
     rm -f trojan.tmp
     if version_lt "$curr_version" "$latest_version"; then
